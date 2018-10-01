@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Root from './components/Root';
+import RouterFile from './components/router';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-render(<Root />, document.getElementById('root'));
+render(<RouterFile />, document.getElementById('RouterFile'));

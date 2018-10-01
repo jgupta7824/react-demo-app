@@ -1,30 +1,24 @@
 
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React, { Component } from 'react';
 import Sidenav from './Sidenav';
+import  ChildRoutes from '../childRoutes';
+import {Header} from './header/header'
 
-import '../assets/stylesheets/base.css';
-
-//  Third Party libraries 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../lib/Jquery';
-import '../lib/Popper';
-import 'bootstrap/dist/js/bootstrap.min';
-
-const App = ({ children }) => {
-  return (
-    <div>
-      <Sidenav />
-      <div className="container">
-        {children}
+class RootComponent extends Component {
+  render(){
+    return (
+      <div className='container'>
+        <div className='row'>
+            <Header />
+        </div>
+        <div className='row'>
+          <div className='col-xs-10 col-offset-1'>
+            <ChildRoutes />
+          </div>
+        </div>
       </div>
-    </div>
-  );
-};
+    )
+  }
+}
 
-App.propTypes = {
-  children: PropTypes.node,
-};
-
-export default App;
+export default RootComponent;
