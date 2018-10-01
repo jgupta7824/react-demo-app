@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import Sidenav from './Sidenav';
 import  ChildRoutes from '../childRoutes';
 import {Header} from './header/header'
 

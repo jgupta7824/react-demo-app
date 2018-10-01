@@ -1,32 +1,45 @@
 
 import React,{Component} from 'react';
-import { Navbar, NavItem ,NavDropdown,Nav,MenuItem} from 'react-bootstrap';
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 export class Header extends Component{
   render(){
   return (
-    <Navbar>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <a href="#home">Demo App</a>
-      </Navbar.Brand>
-    </Navbar.Header>
-    <Nav>
-      <NavItem eventKey={1} href="#">
-        Link
-      </NavItem>
-      <NavItem eventKey={2} href="#">
-        Link
-      </NavItem>
-      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Action</MenuItem>
-        <MenuItem eventKey={3.2}>Another action</MenuItem>
-        <MenuItem eventKey={3.3}>Something else here</MenuItem>
-        <MenuItem divider />
-        <MenuItem eventKey={3.4}>Separated link</MenuItem>
-      </NavDropdown>
-    </Nav>
-  </Navbar>
+    <SideNav
+    onSelect={(selected) => {
+       
+    }}>
+    <SideNav.Toggle />
+    <SideNav.Nav defaultSelected="home">
+        <NavItem eventKey="home">
+            <NavIcon>
+                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+                Home
+            </NavText>
+        </NavItem>
+        <NavItem eventKey="charts">
+            <NavIcon>
+                <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+                Charts
+            </NavText>
+            <NavItem eventKey="charts/linechart">
+                <NavText>
+                    Line Chart
+                </NavText>
+            </NavItem>
+            <NavItem eventKey="charts/barchart">
+                <NavText>
+                    Bar Chart
+                </NavText>
+            </NavItem>
+        </NavItem>
+    </SideNav.Nav>
+</SideNav>
   );
   }
 };
